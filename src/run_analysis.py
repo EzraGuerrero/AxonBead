@@ -40,11 +40,11 @@ def main():
     )
     
     # --output: OPTIONAL argument with default value
-    # If not provided, uses '../example_output'
+    # If not provided, uses 'example_output'
     parser.add_argument(
         '--output', '-o',
-        default='../example_output',
-        help='Output folder for results and QC images (default: ../example_output)'
+        default='example_output',
+        help='Output folder for results and QC images (default: example_output)'
     )
     
     # --scale: OPTIONAL, must be a number (float)
