@@ -1,0 +1,22 @@
+# Core scientific computing
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Image processing
+scikit-image>=0.21.0
+
+# CZI file reading
+czifile>=2019.7.2
+
+# Data handling and export
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Interactive viewer (optional, for development)
+napari>=0.4.0
+
+# Jupyter (for notebook development)
+jupyter>=1.0.0
