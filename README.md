@@ -1,6 +1,6 @@
 # Axonal Damage Analysis
 
-Python pipeline for quantifying axonal bead formation as a readout of neurite damage in drug screening experiments. This python port version is equivalent to the ImageJ macro available also in this account.
+Python pipeline for quantifying axonal bead formation as a readout of neurite damage in drug screening experiments. This is a Python port of the [ImageJ macro version](https://github.com/EzraGuerrero/axonal-damage-analysis/tree/main).
 
 ## Biological Background
 
@@ -26,7 +26,7 @@ This analysis pipeline was used in:
 
 # ImageJ Macro Version
 
-see here
+[ImageJ macro version](https://github.com/EzraGuerrero/axonal-damage-analysis/tree/main).
 
 # Python Version
 
