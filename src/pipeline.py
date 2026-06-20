@@ -52,13 +52,10 @@ def measure_neurite_area(green, sigma1=5, sigma2=1, scale_um_per_px=0.3126):
         'DoG': dog
     }
 
-def count_beads(green, area_um2, percentile=98, min_size=25, max_size=200, min_circularity=0.3):
+def count_beads(green, area_um2, bead_thresh=220, min_size=25, max_size=200, min_circularity=0.3):
     """
-    Count axonal beads using percentile-based threshold and shape filtering.
+    Count axonal beads using manual (experimentally determined) threshold and shape filtering.
     """
-    # Percentile-based threshold
-    # bead_thresh = np.percentile(green, percentile)
-    bead_thresh = 220 # Has to be set manually based on a picture with beads
     bead_mask = green > bead_thresh
 
     # Label connected components
@@ -93,7 +90,7 @@ def count_beads(green, area_um2, percentile=98, min_size=25, max_size=200, min_c
         'bead_mask': bead_mask
     }
 
-def process_image(file_path, scale_um_per_px=0.3126, save_qc=False, output_dir=None):
+def process_image(file_path, scale_um_per_px=0.3126, bead_thresh=220, save_qc=False, output_dir=None):
     """
     Process a single CZI image: neurite area + bead counting.
     """
@@ -108,7 +105,7 @@ def process_image(file_path, scale_um_per_px=0.3126, save_qc=False, output_dir=N
     print(f" Neurite area: {neurite['area_um2']:.2f} µm² (Neurite threshold: {neurite['neurite_threshold']:.2f})")
 
     # Bead counting
-    beads = count_beads(green, neurite['area_um2'])
+    beads = count_beads(green, neurite['area_um2'], bead_thresh=bead_thresh)
     print(f" Bead count: {beads['bead_count']} (Bead threshold: {beads['bead_threshold']:.2f})")
     print(f" Beads/1000µm²: {beads['beads_per_1000um2']:.4f}")
 
@@ -141,11 +138,8 @@ def process_image(file_path, scale_um_per_px=0.3126, save_qc=False, output_dir=N
     }
 
 # BATCH PROCESSING
-
-# C:/Users/ezra.gonzalez/axonal-bead-analysis-py/sample_data/sample_output
-# C:/Users/pinap/github_projects/axonal-bead-analysis-py/sample_data/sample_output
     
-def process_folder(input_dir, output_dir='C:/Users/pinap/github_projects/axonal-bead-analysis-py/sample_data/sample_output', scale_um_per_px=0.3126):
+def process_folder(input_dir, output_dir='.../example_output', scale_um_per_px=0.3126, bead_thresh=220, save_qc=True):
     """
     Process all CZI files in a folder and save summary CSV.
     """
@@ -156,7 +150,7 @@ def process_folder(input_dir, output_dir='C:/Users/pinap/github_projects/axonal-
     # Process each
     results = []
     for file_path in sorted(czi_files):
-        result = process_image(file_path, scale_um_per_px=scale_um_per_px, save_qc=True, output_dir=output_dir)
+        result = process_image(file_path, scale_um_per_px=scale_um_per_px, bead_thresh=bead_thresh, save_qc=save_qc, output_dir=output_dir)
         results.append(result)
 
     # Cerate a summary DataFrame
