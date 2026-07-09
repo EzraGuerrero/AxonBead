@@ -56,16 +56,16 @@ pip install -r requirements.txt
 
 ```bash
 # Basic usage
-python src/run_analysis.py --input sample_data
+python src/run_analysis.py --input docs/sample_data
 
 # Custom threshold
-python src/run_analysis.py --input sample_data --bead-threshold 200
+python src/run_analysis.py --input docs/sample_data --bead-threshold 200
 
 # Custom output folder
-python src/run_analysis.py --input sample_data --output my_results
+python src/run_analysis.py --input docs/sample_data --output my_results
 
 # Skip QC images (faster)
-python src/run_analysis.py --input sample_data --no-qc
+python src/run_analysis.py --input docs/sample_data --no-qc
 
 # Get help
 python src/run_analysis.py --help
@@ -76,7 +76,7 @@ python src/run_analysis.py --help
 | Argument           | Short | Default          | Description                |
 | ------------------ | ----- | ---------------- | -------------------------- |
 | `--input`          | `-i`  | required         | Folder with `.czi` files   |
-| `--output`         | `-o`  | `example_output` | Results folder             |
+| `--output`         | `-o`  | `docs/example_output` | Results folder             |
 | `--scale`          |       | `0.3126`         | µm per pixel               |
 | `--bead-threshold` |       | `220`            | Manual threshold for beads |
 | `--no-qc`          |       | `False`          | Skip overlay images        |
@@ -99,7 +99,7 @@ Configurable thresholds and filters for robustness:
 
 CSV, Excel, and optional QC images in the specified output folder.
 
-![Neurite Analysis Workflow](../example_output/analysis_workflow.png)
+![Neurite Analysis Workflow](../docs/example_output/analysis_workflow.png)
 
 *Figure 1: Analysis workflow. (A) Raw SMI-31 image. (B) Difference of Gaussians filter enhances filaments. (C) Binary mask of neurofilament-positive area. (D) Original image for bead detection. (E) Bead mask (binary) after thresholding. (F) Overlay showing detected beads (red).*
 
@@ -114,7 +114,7 @@ CSV, Excel, and optional QC images in the specified output folder.
 
 # ImageJ Macro Version
 
-[ImageJ macro version](https://github.com/EzraGuerrero/axonal-damage-analysis/tree/main).
+[ImageJ macro version](https://github.com/EzraGuerrero/AxonBead_ImageJ/tree/main).
 
 ---
 ## Publication
