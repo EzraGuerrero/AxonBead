@@ -39,36 +39,25 @@ A detailed [protocol](https://github.com/EzraGuerrero/axonal-bead-analysis-py/bl
 
 ### Instalation
 
+Clone the repository and install in development mode:
+
 ```bash
-# Clone repository
 git clone https://github.com/EzraGuerrero/AxonBead.git
-cd axonal-bead-analysis-py
-
-# Create environment
-conda create -n axonal-bead python=3.11
-conda activate axonal-bead
-
-# Install dependencies
-pip install -r requirements.txt
+cd AxonBead
+pip install -e .
 ```
 
 ### Usage
 
 ```bash
-# Basic usage
-python src/run_analysis.py --input docs/sample_data
+# Basic analysis
+axonbead --input docs/sample_data
 
-# Custom threshold
-python src/run_analysis.py --input docs/sample_data --bead-threshold 200
+# Custom parameters
+axonbead --input docs/sample_data --bead-threshold 200 --output my_results
 
-# Custom output folder
-python src/run_analysis.py --input docs/sample_data --output my_results
-
-# Skip QC images (faster)
-python src/run_analysis.py --input docs/sample_data --no-qc
-
-# Get help
-python src/run_analysis.py --help
+# Skip QC images for faster processing
+axonbead --input docs/sample_data --no-qc
 ```
 
 ### CLI arguments

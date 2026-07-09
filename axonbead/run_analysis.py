@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 CLI for Axonal Damage Analysis
-Run from terminal: python src/run_analysis.py --input ../docs/sample_data
+Run from terminal: python axonbead/run_analysis.py --input ../docs/sample_data
 """
 
 # --- IMPORTS ---
@@ -9,13 +9,13 @@ import argparse      # Built-in library for parsing command-line arguments
 import os            # For file path operations
 import sys           # For modifying Python's module search path
 
-# Add src/ folder to Python's path so you can import pipeline.py
+# Add axonbead/ folder to Python's path so you can import pipeline.py
 # __file__ is the path to this script (run_analysis.py)
-# os.path.dirname(__file__) gives the src/ folder
+# os.path.dirname(__file__) gives the axonbead/ folder
 # sys.path.insert(0, ...) adds it at the beginning of the search path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from pipeline import process_folder # Import your batch processing function
+from axonbead.pipeline import process_folder # Import your batch processing function
 
 
 # --- MAIN FUNCTION ---
