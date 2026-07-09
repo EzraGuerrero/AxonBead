@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 CLI for Axonal Damage Analysis
-Run from terminal: python src/run_analysis.py --input ../sample_data
+Run from terminal: python src/run_analysis.py --input ../docs/sample_data
 """
 
 # --- IMPORTS ---
@@ -31,8 +31,8 @@ def main():
     )
     
     # --input: REQUIRED argument
-    # User must provide this: python run_analysis.py --input sample_data
-    # -i is a shortcut: python run_analysis.py -i sample_data
+    # User must provide this: python run_analysis.py --input docs/sample_data
+    # -i is a shortcut: python run_analysis.py -i docs/sample_data
     parser.add_argument(
         '--input', '-i',
         required=True,
@@ -40,11 +40,11 @@ def main():
     )
     
     # --output: OPTIONAL argument with default value
-    # If not provided, uses 'example_output'
+    # If not provided, uses 'docs/example_output'
     parser.add_argument(
         '--output', '-o',
-        default='example_output',
-        help='Output folder for results and QC images (default: example_output)'
+        default='docs/example_output',
+        help='Output folder for results and QC images (default: docs/example_output)'
     )
     
     # --scale: OPTIONAL, must be a number (float)

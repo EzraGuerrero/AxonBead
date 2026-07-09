@@ -139,7 +139,7 @@ def process_image(file_path, scale_um_per_px=0.3126, bead_thresh=220, save_qc=Fa
 
 # BATCH PROCESSING
     
-def process_folder(input_dir, output_dir='example_output', scale_um_per_px=0.3126, bead_thresh=220, save_qc=True):
+def process_folder(input_dir, output_dir='docs/example_output', scale_um_per_px=0.3126, bead_thresh=220, save_qc=True):
     """
     Process all CZI files in a folder and save summary CSV.
     """
