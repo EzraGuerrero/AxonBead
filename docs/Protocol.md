@@ -75,7 +75,7 @@ Extract the green channel (SMI-31) from the CZI file. The blue channel (DAPI) is
 
 **Output:** Binary mask where white pixels = neurite area, black = background.
 
-![Neurite Analysis Workflow](../example_output/analysis_workflow.png)
+![Neurite Analysis Workflow](../docs/example_output/analysis_workflow.png)
 
 *Figure 1: Analysis workflow. (A) Raw SMI-31 image. (B) Difference of Gaussians filter enhances filaments. (C) Binary mask of neurofilament-positive area. (D) Original image for bead detection. (E) Bead mask (binary) after thresholding. (F) Overlay showing detected beads (red).*
 
