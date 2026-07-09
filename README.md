@@ -41,7 +41,7 @@ A modern python port with command-line interface.
 
 ```bash
 # Clone repository
-git clone https://github.com/EzraGuerrero/axonal-damage-analysis-py.git
+git clone https://github.com/EzraGuerrero/axonal-bead-analysis-py.git
 cd axonal-damage-analysis-py
 
 # Create environment
